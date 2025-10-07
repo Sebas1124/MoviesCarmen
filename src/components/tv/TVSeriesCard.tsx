@@ -30,14 +30,14 @@ const TVSeriesCard: React.FC<TVSeriesCardProps> = ({
             className="w-full aspect-[2/3]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-            <div className="absolute bottom-4 left-4 right-4">
-              <h3 className="text-white text-sm font-bold mb-1 line-clamp-2">{series.name}</h3>
+            <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4">
+              <h3 className="text-white text-xs sm:text-sm font-bold mb-1 line-clamp-2">{series.name}</h3>
               <div className="flex items-center justify-between">
                 <span className="text-gray-300 text-xs">
                   {series.first_air_date ? getYearFromDate(series.first_air_date) : 'N/A'}
                 </span>
                 <div className="flex items-center text-yellow-400">
-                  <Star size={12} className="mr-1 fill-current" />
+                  <Star size={10} className="sm:w-3 sm:h-3 mr-1 fill-current" />
                   <span className="text-xs">{series.vote_average.toFixed(1)}</span>
                 </div>
               </div>

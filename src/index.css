@@ -226,3 +226,135 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Mobile optimizations - simplified */
+@media (max-width: 640px) {
+  /* Prevent zoom on input focus */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Safe area for mobile devices */
+@media (max-width: 428px) {
+  .hero-section {
+    padding-top: env(safe-area-inset-top, 20px);
+  }
+}
+
+/* Mobile landscape optimizations */
+@media (max-height: 500px) and (orientation: landscape) {
+  /* Hero section adjustments for landscape - altura reducida */
+  .hero-section {
+    height: 100vh !important;
+    min-height: 100vh !important;
+  }
+  
+  /* Contenedor principal centrado verticalmente */
+  .landscape-hero-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+    padding-top: 60px !important; /* Espacio para el header */
+  }
+  
+  /* Compact padding for landscape */
+  .landscape-compact {
+    padding: 8px 12px !important;
+  }
+  
+  /* Smaller text for landscape */
+  .landscape-title {
+    font-size: 1.125rem !important; /* text-lg */
+    line-height: 1.75rem !important;
+    margin-bottom: 6px !important;
+  }
+  
+  .landscape-description {
+    font-size: 0.875rem !important; /* text-sm */
+    line-height: 1.25rem !important;
+    margin-bottom: 10px !important;
+  }
+  
+  /* Compact buttons for landscape */
+  .landscape-button {
+    padding: 6px 10px !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Movie cards adjustment */
+  .movie-card {
+    width: 100px !important;
+    min-width: 100px !important;
+  }
+  
+  .movie-card img {
+    height: 150px !important;
+  }
+  
+  /* Navigation adjustments */
+  .mobile-nav {
+    padding: 4px 8px !important;
+  }
+  
+  /* Indicadores del carousel más pequeños */
+  .landscape-indicators {
+    margin-bottom: 6px !important;
+  }
+  
+  .landscape-indicators button {
+    width: 8px !important;
+    height: 8px !important;
+  }
+  
+  /* Espaciado reducido para contenido */
+  .landscape-content-spacing {
+    margin-bottom: 6px !important;
+  }
+  
+  /* Margen específico para el contenedor de películas en landscape */
+  .landscape-movies-container {
+    margin-top: -10vh !important; /* Reducir overlap en landscape */
+  }
+}
+
+/* iPhone landscape specific (Pro Max, etc.) */
+@media (max-height: 430px) and (orientation: landscape) {
+  .hero-section {
+    height: 70vh !important; /* Altura balanceada */
+    padding-top: env(safe-area-inset-top, 10px);
+    padding-left: env(safe-area-inset-left, 20px);
+    padding-right: env(safe-area-inset-right, 20px);
+  }
+  
+  .landscape-hero-content {
+    padding-top: 50px !important; /* Menos padding top para pantallas cortas */
+  }
+  
+  .landscape-movies-container {
+    margin-top: -5vh !important; /* Menos overlap negativo */
+  }
+  
+  .landscape-title {
+    font-size: 1rem !important; /* text-base */
+    line-height: 1.5rem !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .landscape-description {
+    font-size: 0.75rem !important; /* text-xs */
+    line-height: 1rem !important;
+    margin-bottom: 6px !important;
+  }
+  
+  .landscape-button {
+    padding: 4px 8px !important;
+    font-size: 0.75rem !important;
+  }
+}

@@ -30,14 +30,14 @@ const MovieCard: React.FC<MovieCardProps> = ({
             className="w-full aspect-[2/3]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-            <div className="absolute bottom-4 left-4 right-4">
-              <h3 className="text-white text-sm font-bold mb-1 line-clamp-2">{movie.title}</h3>
+            <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4">
+              <h3 className="text-white text-xs sm:text-sm font-bold mb-1 line-clamp-2">{movie.title}</h3>
               <div className="flex items-center justify-between">
                 <span className="text-gray-300 text-xs">
                   {movie.release_date ? getYearFromDate(movie.release_date) : 'N/A'}
                 </span>
                 <div className="flex items-center text-yellow-400">
-                  <Star size={12} className="mr-1 fill-current" />
+                  <Star size={10} className="sm:w-3 sm:h-3 mr-1 fill-current" />
                   <span className="text-xs">{movie.vote_average.toFixed(1)}</span>
                 </div>
               </div>
@@ -80,10 +80,10 @@ const MovieCard: React.FC<MovieCardProps> = ({
           <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-250">
             <Link 
               to={`/movie/${movie.id}`}
-              className="flex-1 flex items-center justify-center gap-2 bg-white text-black py-2 px-4 rounded-lg font-semibold hover:bg-gray-200 transition-all duration-200 transform hover:scale-105"
+              className="flex-1 flex items-center justify-center gap-1 sm:gap-2 bg-white text-black py-2 px-2 sm:px-4 rounded-lg font-semibold hover:bg-gray-200 transition-all duration-200 transform hover:scale-105 text-xs sm:text-sm"
             >
-              <Info size={16} />
-              <span className="text-sm">Info</span>
+              <Info size={14} className="sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline">Info</span>
             </Link>
             
             {onPlayTrailer && (
@@ -94,7 +94,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
                 }}
                 className="flex items-center justify-center bg-white/20 text-white p-2 rounded-lg hover:bg-white/30 transition-all duration-200 transform hover:scale-105"
               >
-                <Play size={16} className="fill-current" />
+                <Play size={14} className="sm:w-4 sm:h-4 fill-current" />
               </button>
             )}
           </div>

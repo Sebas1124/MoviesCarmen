@@ -38,13 +38,13 @@ const TVSeriesRow: React.FC<TVSeriesRowProps> = ({
   }
 
   return (
-    <section className="mb-12">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+    <section className="mb-8 sm:mb-12">
+      <div className="flex items-center justify-between mb-4 sm:mb-6 px-4">
+        <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
           {title}
         </h2>
         
-        <div className="flex gap-2">
+        <div className="hidden sm:flex gap-2">
           <button
             onClick={scrollLeft}
             className="bg-gray-800/50 hover:bg-gray-700/50 text-white p-2 rounded-full transition-colors duration-200"
@@ -74,7 +74,7 @@ const TVSeriesRow: React.FC<TVSeriesRowProps> = ({
         ) : (
           <div
             ref={containerRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 scroll-smooth"
+            className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide px-4 pb-4 scroll-smooth"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none'
@@ -82,10 +82,11 @@ const TVSeriesRow: React.FC<TVSeriesRowProps> = ({
           >
             {series.length > 0 ? (
               series.map((tvSeries, index) => (
-                <div key={tvSeries.id} className="flex-none w-72">
+                <div key={tvSeries.id} className="flex-none w-36 sm:w-48 md:w-72">
                   <TVSeriesCard
                     series={tvSeries}
                     index={index}
+                    variant="compact"
                     onPlayTrailer={onPlayTrailer}
                   />
                 </div>

@@ -75,9 +75,9 @@ const MovieRow: React.FC<MovieRowProps> = ({
   }
 
   return (
-    <section className="mb-12 group">
+    <section className="mb-8 sm:mb-12 group">
       {title && (
-        <h2 className="text-2xl font-bold text-white mb-6 px-4">
+        <h2 className="text-lg landscape-title sm:text-2xl font-bold text-white mb-4 sm:mb-6 px-4">
           {title}
         </h2>
       )}
@@ -85,11 +85,11 @@ const MovieRow: React.FC<MovieRowProps> = ({
       <div className="relative">
         <div 
           ref={containerRef}
-          className="flex gap-4 overflow-x-auto scrollbar-hide px-4 scroll-smooth"
+          className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide px-4 scroll-smooth"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {movies.map((movie, index) => (
-            <div key={movie.id} className="flex-shrink-0 w-48">
+            <div key={movie.id} className="flex-shrink-0 w-36 sm:w-48">
               <MovieCard 
                 movie={movie} 
                 index={index}

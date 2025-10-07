@@ -55,7 +55,7 @@ const HomePage: React.FC = () => {
       )}
 
       {/* Movie Rows */}
-      <div className="relative z-10 -mt-32 pb-20">
+      <div className="relative z-10 -mt-20 sm:-mt-32 pb-20 landscape-movies-container">
         <div className="container mx-auto">
           <MovieRow
             title="Tendencias de la Semana"

@@ -22,7 +22,6 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   size = 'medium',
   className = '',
   aspectRatio,
-  priority = false,
   onLoad,
   onError
 }) => {

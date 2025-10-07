@@ -14,7 +14,7 @@ import {
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
-  const [loadSecondaryData, setLoadSecondaryData] = useState(false);
+  const [_, setLoadSecondaryData] = useState(false);
   
   // Load primary data first (Popular movies for hero)
   const { data: popularMovies, isLoading: popularLoading, error: popularError } = usePopularMovies();
